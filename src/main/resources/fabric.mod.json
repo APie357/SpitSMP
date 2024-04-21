@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "spit_smp",
+  "version": "${version}",
+  "name": "Spit SMP",
+  "description": "you can actually get sued for spitting on someone",
+  "authors": [
+    "APie357"
+  ],
+  "license": "MPL-2.0",
+  "icon": "assets/spit_smp/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.andrewd1.spitsmp.client.SpitSMPClient"
+    ],
+    "main": [
+      "dev.andrewd1.spitsmp.SpitSMP"
+    ],
+    "fabric-datagen": [
+      "dev.andrewd1.spitsmp.SpitSMPDataGenerator"
+    ]
+  },
+  "mixins": [
+    "spit_smp.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
