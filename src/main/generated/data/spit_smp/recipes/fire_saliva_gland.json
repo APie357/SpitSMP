@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    },
+    "G": {
+      "item": "minecraft:raw_gold_block"
+    },
+    "M": {
+      "item": "minecraft:magma_cream"
+    },
+    "S": {
+      "item": "spit_smp:saliva_gland"
+    }
+  },
+  "pattern": [
+    "MGM",
+    "DSD",
+    "FBF"
+  ],
+  "result": {
+    "item": "spit_smp:fire_saliva_gland"
+  },
+  "show_notification": true
+}
