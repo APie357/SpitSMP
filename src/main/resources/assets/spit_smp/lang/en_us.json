@@ -1,6 +1,7 @@
 {
-  "item.spit_smp.saliva_gland": "Saliva Gland",
-  "item.spit_smp.fire_saliva_gland": "Fire Saliva Gland",
+  "itemGroup.spit": "Saliva Glands",
+  "trinkets.slot.head.saliva_gland": "Saliva Gland",
 
-  "itemGroup.spit": "Saliva Glands"
+  "item.spit_smp.saliva_gland": "Saliva Gland",
+  "item.spit_smp.fire_saliva_gland": "Fire Saliva Gland"
 }
