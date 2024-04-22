@@ -1,8 +1,6 @@
 package dev.andrewd1.spitsmp.datagen;
 
-import dev.andrewd1.spitsmp.item.ModItemGroups;
 import dev.andrewd1.spitsmp.item.ModItems;
-import dev.andrewd1.spitsmp.item.items.FireSalivaGland;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
