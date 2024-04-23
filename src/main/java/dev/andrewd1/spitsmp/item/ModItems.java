@@ -10,8 +10,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item SALIVA_GLAND = registerItem("saliva_gland", new SalivaGland(new FabricItemSettings()));
-    public static final Item FIRE_SALIVA_GLAND = registerItem("fire_saliva_gland", new FireSalivaGland(new FabricItemSettings()));
+    public static final SalivaGlandItem SALIVA_GLAND = (SalivaGlandItem) registerItem("saliva_gland", new SalivaGland(new FabricItemSettings()));
+    public static final SalivaGlandItem FIRE_SALIVA_GLAND = (SalivaGlandItem) registerItem("fire_saliva_gland", new FireSalivaGland(new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(SpitSMP.MOD_ID, name), item);

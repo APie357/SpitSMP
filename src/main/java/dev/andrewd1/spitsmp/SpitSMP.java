@@ -2,6 +2,7 @@ package dev.andrewd1.spitsmp;
 
 import dev.andrewd1.spitsmp.item.ModItemGroups;
 import dev.andrewd1.spitsmp.item.ModItems;
+import dev.andrewd1.spitsmp.network.ModPackets;
 import dev.andrewd1.spitsmp.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -19,6 +20,8 @@ public class SpitSMP implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModLootTableModifiers.modifyLootTables();
+
+        ModPackets.registerC2SPackets();
 
         LOGGER.info("Spit SMP mod loaded");
     }

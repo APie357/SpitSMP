@@ -3,5 +3,9 @@
   "trinkets.slot.head.saliva_gland": "Saliva Gland",
 
   "item.spit_smp.saliva_gland": "Saliva Gland",
-  "item.spit_smp.fire_saliva_gland": "Fire Saliva Gland"
+  "item.spit_smp.fire_saliva_gland": "Fire Saliva Gland",
+
+  "key.category.spit_smp.spit": "Spit",
+  "key.spit_smp.spit_main": "Main Ability",
+  "key.spit_smp.spit_alt": "Alternate Ability"
 }
