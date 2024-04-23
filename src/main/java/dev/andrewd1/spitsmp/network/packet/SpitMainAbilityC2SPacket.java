@@ -9,7 +9,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 
 public class SpitMainAbilityC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender responseSender) {
-        SalivaGlandItem item = SalivaGlandItem.getItemFromSlot(server, player);
+        SalivaGlandItem item = SalivaGlandItem.getItemFromSlot(player);
         if (item == null) { return; }
         item.useMainAbility(server, player);
     }

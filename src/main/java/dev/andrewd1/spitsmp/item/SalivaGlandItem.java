@@ -24,7 +24,7 @@ public abstract class SalivaGlandItem extends TrinketItem {
     public void useAltAbility(MinecraftServer server, ServerPlayerEntity player) { }
 
     @Nullable
-    public static SalivaGlandItem getItemFromSlot(MinecraftServer server, ServerPlayerEntity player) {
+    public static SalivaGlandItem getItemFromSlot(ServerPlayerEntity player) {
         Optional<TrinketComponent> componentOptional = TrinketsApi.getTrinketComponent(player);
         if (componentOptional.isEmpty()) { return null; }
 
