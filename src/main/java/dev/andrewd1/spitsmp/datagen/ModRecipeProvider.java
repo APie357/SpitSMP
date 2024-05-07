@@ -32,5 +32,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.FIRE_SALIVA_GLAND)))
                 ;
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.FLAME_SALIVA_GLAND, 1)
+                .pattern("TGT")
+                .pattern("DFD")
+                .pattern("BAB")
+                .input('T', Items.GHAST_TEAR)
+                .input('G', Items.RAW_GOLD_BLOCK)
+                .input('D', Items.DIAMOND_BLOCK)
+                .input('F', ModItems.FIRE_SALIVA_GLAND)
+                .input('B', Items.BLAZE_ROD)
+                .input('A', Items.DIAMOND)
+                .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.FLAME_SALIVA_GLAND)))
+                ;
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.EXPLODO_SALIVA_GLAND, 1)
+                .pattern("TDT")
+                .pattern("AGA")
+                .pattern("IAI")
+                .input('T', Items.TNT)
+                .input('D', Items.DIAMOND_BLOCK)
+                .input('A', Items.DIAMOND)
+                .input('G', ModItems.SALIVA_GLAND)
+                .input('I', Items.RAW_IRON_BLOCK)
+                .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.EXPLODO_SALIVA_GLAND)))
+                ;
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.LIGHTNING_SALIVA_GLAND, 1)
+                .pattern("CNC")
+                .pattern("DGD")
+                .pattern("ARA")
+                .input('C', Items.FIRE_CHARGE)
+                .input('N', Items.NETHERITE_INGOT)
+                .input('D', Items.DIAMOND_BLOCK)
+                .input('G', ModItems.SALIVA_GLAND)
+                .input('A', Items.DIAMOND)
+                .input('R', Items.LIGHTNING_ROD)
+                .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.LIGHTNING_SALIVA_GLAND)))
+                ;
     }
 }

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:fire_charge"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "G": {
+      "item": "spit_smp:saliva_gland"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "R": {
+      "item": "minecraft:lightning_rod"
+    }
+  },
+  "pattern": [
+    "CNC",
+    "DGD",
+    "ARA"
+  ],
+  "result": {
+    "item": "spit_smp:lightning_saliva_gland"
+  },
+  "show_notification": true
+}

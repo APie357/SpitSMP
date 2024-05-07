@@ -18,6 +18,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ModTags.Items.SALIVA_GLANDS)
                 .add(ModItems.SALIVA_GLAND)
                 .add(ModItems.FIRE_SALIVA_GLAND)
+                .add(ModItems.FLAME_SALIVA_GLAND)
+                .add(ModItems.EXPLODO_SALIVA_GLAND)
+                .add(ModItems.LIGHTNING_SALIVA_GLAND)
                 ;
     }
 }

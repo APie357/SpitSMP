@@ -4,6 +4,9 @@
 
   "item.spit_smp.saliva_gland": "Saliva Gland",
   "item.spit_smp.fire_saliva_gland": "Fire Saliva Gland",
+  "item.spit_smp.flame_saliva_gland": "Flame Saliva Gland",
+  "item.spit_smp.explodo_saliva_gland": "Explodo Saliva Gland",
+  "item.spit_smp.lightning_saliva_gland": "Lightning Saliva Gland",
 
   "key.category.spit_smp.spit": "Spit",
   "key.spit_smp.spit_main": "Main Ability",

@@ -2,9 +2,7 @@ package dev.andrewd1.spitsmp.entity.entities;
 
 import dev.andrewd1.spitsmp.entity.ModEntities;
 import net.minecraft.block.AbstractBlock;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
@@ -19,11 +17,14 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class SpitProjectileEntity extends ProjectileEntity {
+    private OnHitEntity onHitEntity = (a) -> {};
+    private OnHitGround onHitGround = (a) -> {};
+
     public SpitProjectileEntity(EntityType<? extends SpitProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public SpitProjectileEntity(World world, PlayerEntity owner) {
+    public SpitProjectileEntity(World world, PlayerEntity owner, OnHitEntity onHitEntity, OnHitGround onHitGround) {
         this(ModEntities.SPIT_PROJECTILE, world);
         this.setOwner(owner);
         this.setPosition(
@@ -31,10 +32,21 @@ public class SpitProjectileEntity extends ProjectileEntity {
                 owner.getEyeY() - (double)0.1f,
                 owner.getZ() + (double)(owner.getWidth() + 1.0f) * 0.5 * (double)MathHelper.cos(owner.bodyYaw * ((float)Math.PI / 180))
         );
+
+        this.onHitEntity = onHitEntity;
+        this.onHitGround = onHitGround;
+    }
+
+    public SpitProjectileEntity(ServerPlayerEntity owner, OnHitEntity onHitEntity, OnHitGround onHitGround) {
+        this(owner.getWorld(), owner, onHitEntity, onHitGround);
     }
 
     public SpitProjectileEntity(ServerPlayerEntity owner) {
-        this(owner.getWorld(), owner);
+        this(owner, (a) -> {}, (a) -> {});
+    }
+
+    public SpitProjectileEntity(ServerPlayerEntity owner, OnHitEntity onHitEntity) {
+        this(owner, onHitEntity, (a) -> {});
     }
 
     @Override
@@ -48,7 +60,7 @@ public class SpitProjectileEntity extends ProjectileEntity {
         double f = this.getZ() + vec3d.z;
         this.updateRotation();
         float g = 0.99f;
-        float h = 0.06f;
+        float h = -0.06f;
         if (this.getWorld().getStatesInBox(this.getBoundingBox()).noneMatch(AbstractBlock.AbstractBlockState::isAir)) {
             this.discard();
             return;
@@ -67,15 +79,13 @@ public class SpitProjectileEntity extends ProjectileEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
-        Entity entity = this.getOwner();
-        if (entity instanceof LivingEntity livingEntity) {
-            entityHitResult.getEntity().damage(this.getDamageSources().mobProjectile(this, livingEntity), 1.0f);
-        }
+        onHitEntity.run(entityHitResult);
     }
 
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
+        onHitGround.run(blockHitResult);
         if (!this.getWorld().isClient) {
             this.discard();
         }
@@ -96,5 +106,13 @@ public class SpitProjectileEntity extends ProjectileEntity {
             this.getWorld().addParticle(ParticleTypes.SPIT, this.getX(), this.getY(), this.getZ(), d * g, e, f * g);
         }
         this.setVelocity(d, e, f);
+    }
+
+    public interface OnHitGround {
+        void run(BlockHitResult result);
+    }
+
+    public interface OnHitEntity {
+        void run(EntityHitResult result);
     }
 }

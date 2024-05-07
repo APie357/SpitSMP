@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "spit_smp:saliva_gland",
-    "spit_smp:fire_saliva_gland"
+    "spit_smp:fire_saliva_gland",
+    "spit_smp:flame_saliva_gland",
+    "spit_smp:explodo_saliva_gland",
+    "spit_smp:lightning_saliva_gland"
   ]
 }

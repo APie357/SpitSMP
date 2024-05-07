@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:diamond"
+    },
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "F": {
+      "item": "spit_smp:fire_saliva_gland"
+    },
+    "G": {
+      "item": "minecraft:raw_gold_block"
+    },
+    "T": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "pattern": [
+    "TGT",
+    "DFD",
+    "BAB"
+  ],
+  "result": {
+    "item": "spit_smp:flame_saliva_gland"
+  },
+  "show_notification": true
+}

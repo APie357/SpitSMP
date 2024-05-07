@@ -19,6 +19,9 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.SALIVA_GLAND);
                         entries.add(ModItems.FIRE_SALIVA_GLAND);
+                        entries.add(ModItems.FLAME_SALIVA_GLAND);
+                        entries.add(ModItems.EXPLODO_SALIVA_GLAND);
+                        entries.add(ModItems.LIGHTNING_SALIVA_GLAND);
                     })
                     .build()
     );

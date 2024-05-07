@@ -21,5 +21,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SALIVA_GLAND, Models.GENERATED);
         itemModelGenerator.register(ModItems.FIRE_SALIVA_GLAND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLAME_SALIVA_GLAND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EXPLODO_SALIVA_GLAND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LIGHTNING_SALIVA_GLAND, Models.GENERATED);
     }
 }
