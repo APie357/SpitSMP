@@ -19,7 +19,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class SalivaGlandItem extends TrinketItem {
-    private static final Random random = new Random();
+    protected static final Random random = new Random();
 
     public SalivaGlandItem(Settings settings) {
         super(settings.maxCount(1));
