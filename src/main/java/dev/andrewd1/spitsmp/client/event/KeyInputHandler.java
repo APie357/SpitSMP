@@ -16,7 +16,10 @@ public class KeyInputHandler {
     public static KeyBinding mainAbility;
     public static KeyBinding altAbility;
 
-    public static void registerKeyInputs() {
+    public static void register() {
+        mainAbility = KeyBindingHelper.registerKeyBinding(new KeyBinding(KEY_MAIN_ABILITY, GLFW.GLFW_KEY_R, KEY_CATEGORY));
+        altAbility = KeyBindingHelper.registerKeyBinding(new KeyBinding(KEY_ALT_ABILITY, GLFW.GLFW_KEY_V, KEY_CATEGORY));
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (mainAbility.wasPressed()) {
                 ClientPlayNetworking.send(ModPackets.SPIT_MAIN_ABILITY, PacketByteBufs.create());
@@ -26,12 +29,5 @@ public class KeyInputHandler {
                 ClientPlayNetworking.send(ModPackets.SPIT_ALT_ABILITY, PacketByteBufs.create());
             }
         });
-    }
-
-    public static void register() {
-        mainAbility = KeyBindingHelper.registerKeyBinding(new KeyBinding(KEY_MAIN_ABILITY, GLFW.GLFW_KEY_R, KEY_CATEGORY));
-        altAbility = KeyBindingHelper.registerKeyBinding(new KeyBinding(KEY_ALT_ABILITY, GLFW.GLFW_KEY_V, KEY_CATEGORY));
-
-        registerKeyInputs();
     }
 }

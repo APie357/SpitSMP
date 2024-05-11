@@ -19,10 +19,24 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class SalivaGlandItem extends TrinketItem {
+    public final int mainCooldownTicks;
+    public final int altCooldownTicks;
+
     protected static final Random random = new Random();
 
-    public SalivaGlandItem(Settings settings) {
+    public SalivaGlandItem(Settings settings, int mainCooldownTicks, int altCooldownTicks) {
         super(settings.maxCount(1));
+
+        this.mainCooldownTicks = mainCooldownTicks;
+        this.altCooldownTicks = altCooldownTicks;
+    }
+
+    public SalivaGlandItem(Settings settings, int mainCooldownTicks) {
+        this(settings, mainCooldownTicks, 0);
+    }
+
+    public SalivaGlandItem(Settings settings) {
+        this(settings, 30);
     }
 
     public void useMainAbility(MinecraftServer server, ServerPlayerEntity player) { }
