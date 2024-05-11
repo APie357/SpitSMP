@@ -22,6 +22,8 @@ public class ModItemGroups {
                         entries.add(ModItems.FLAME_SALIVA_GLAND);
                         entries.add(ModItems.EXPLODO_SALIVA_GLAND);
                         entries.add(ModItems.LIGHTNING_SALIVA_GLAND);
+                        entries.add(ModItems.SILVER_SALIVA_GLAND);
+                        entries.add(ModItems.SILVERER_SALIVA_GLAND);
                     })
                     .build()
     );

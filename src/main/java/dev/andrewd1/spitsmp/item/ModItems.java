@@ -14,6 +14,8 @@ public class ModItems {
     public static final SalivaGlandItem FLAME_SALIVA_GLAND = (SalivaGlandItem) registerItem("flame_saliva_gland", new FlameSalivaGland(new FabricItemSettings()));
     public static final SalivaGlandItem EXPLODO_SALIVA_GLAND = (SalivaGlandItem) registerItem("explodo_saliva_gland", new ExplodoSalivaGland(new FabricItemSettings()));
     public static final SalivaGlandItem LIGHTNING_SALIVA_GLAND = (SalivaGlandItem) registerItem("lightning_saliva_gland", new LightningSalivaGland(new FabricItemSettings()));
+    public static final SalivaGlandItem SILVER_SALIVA_GLAND = (SalivaGlandItem) registerItem("silver_saliva_gland", new SilverSalivaGland(new FabricItemSettings()));
+    public static final SalivaGlandItem SILVERER_SALIVA_GLAND = (SalivaGlandItem) registerItem("silverer_saliva_gland", new SilvererSalivaGland(new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(SpitSMP.MOD_ID, name), item);

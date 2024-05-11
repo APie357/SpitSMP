@@ -73,5 +73,29 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.LIGHTNING_SALIVA_GLAND)))
                 ;
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.SILVER_SALIVA_GLAND, 1)
+                .pattern("iIi")
+                .pattern("IGI")
+                .pattern("SSS")
+                .input('i', Items.RAW_IRON)
+                .input('I', Items.RAW_IRON_BLOCK)
+                .input('G', ModItems.SALIVA_GLAND)
+                .input('S', Items.SMOOTH_STONE)
+                .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SILVER_SALIVA_GLAND)))
+                ;
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.SILVERER_SALIVA_GLAND, 1)
+                .pattern("SiS")
+                .pattern("IGI")
+                .pattern("IiI")
+                .input('S', Items.CRACKED_STONE_BRICKS)
+                .input('i', Items.RAW_IRON)
+                .input('I', Items.RAW_IRON_BLOCK)
+                .input('G', ModItems.SILVER_SALIVA_GLAND)
+                .criterion(RecipeProvider.hasItem(ModItems.SALIVA_GLAND), RecipeProvider.conditionsFromItem(ModItems.SALIVA_GLAND))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SILVERER_SALIVA_GLAND)))
+                ;
     }
 }

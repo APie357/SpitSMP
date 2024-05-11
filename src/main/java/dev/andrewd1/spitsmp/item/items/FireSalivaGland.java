@@ -17,20 +17,19 @@ public class FireSalivaGland extends SalivaGlandItem {
     public void useMainAbility(MinecraftServer server, ServerPlayerEntity player) {
         useSpit(player, result -> {
             Entity victim = result.getEntity();
-            victim.damage(player.getDamageSources().playerAttack(player), 3f);
-            victim.setOnFireFor(10);
+            damageAndSetOnFire(victim, player, 3f, 10);
+            setFireIfEmpty(victim.getWorld(), result.getEntity().getBlockPos());
+        }, result -> setFireIfEmpty(player.getWorld(), result.getBlockPos().offset(result.getSide())));
+    }
 
-            World world = victim.getWorld();
-            BlockPos firePos = victim.getBlockPos();
-            if (world.getBlockState(firePos).getBlock() == Blocks.AIR) {
-                world.setBlockState(firePos, Blocks.FIRE.getDefaultState());
-            }
-        }, result -> {
-            World world = player.getWorld();
-            BlockPos firePos = result.getBlockPos().up();
-            if (world.getBlockState(firePos).getBlock() == Blocks.AIR) {
-                world.setBlockState(firePos, Blocks.FIRE.getDefaultState());
-            }
-        });
+    protected void damageAndSetOnFire(Entity victim, ServerPlayerEntity attacker, float damageAmount, int fireSeconds) {
+            victim.damage(attacker.getDamageSources().playerAttack(attacker), damageAmount);
+            victim.setOnFireFor(fireSeconds);
+    }
+
+    protected void setFireIfEmpty(World world, BlockPos pos) {
+        if (world.getBlockState(pos).getBlock() == Blocks.AIR) {
+            world.setBlockState(pos, Blocks.FIRE.getDefaultState());
+        }
     }
 }

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "spit_smp:saliva_gland"
+    },
+    "I": {
+      "item": "minecraft:raw_iron_block"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    },
+    "i": {
+      "item": "minecraft:raw_iron"
+    }
+  },
+  "pattern": [
+    "iIi",
+    "IGI",
+    "SSS"
+  ],
+  "result": {
+    "item": "spit_smp:silver_saliva_gland"
+  },
+  "show_notification": true
+}
